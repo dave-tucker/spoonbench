@@ -1,0 +1,167 @@
+# Saru voice eval — model matrix
+# soul: false → bare agent_stub (control)
+# soul: true  → agent_stub + soul_wrapper + SOUL.md
+#
+# provider: anthropic | openrouter | openai
+# For openrouter: set OPENROUTER_API_KEY env var
+# For openai:     set base_url in the entry; set OPENAI_API_KEY if auth required
+#
+# NOTE: OpenRouter model IDs use the format {org}/{model}.
+# Verify exact IDs at https://openrouter.ai/models before running.
+# IDs below reflect what the user specified — update if OpenRouter slugs differ.
+
+# ── Anthropic via OpenRouter ──────────────────────────────────────────────────
+
+- codename: opus-control
+  provider: openrouter
+  model: anthropic/claude-opus-4.6
+  soul: false
+
+- codename: opus-soul
+  provider: openrouter
+  model: anthropic/claude-opus-4.6
+  soul: true
+
+- codename: sonnet-control
+  provider: openrouter
+  model: anthropic/claude-sonnet-4.6
+  soul: false
+
+- codename: sonnet-soul
+  provider: openrouter
+  model: anthropic/claude-sonnet-4.6
+  soul: true
+
+- codename: haiku-control
+  provider: openrouter
+  model: anthropic/claude-haiku-4.5
+  soul: false
+
+- codename: haiku-soul
+  provider: openrouter
+  model: anthropic/claude-haiku-4.5
+  soul: true
+
+# ── OpenAI via OpenRouter ─────────────────────────────────────────────────────
+
+- codename: gpt5-control
+  provider: openrouter
+  model: openai/gpt-5.4
+  soul: false
+
+- codename: gpt5-soul
+  provider: openrouter
+  model: openai/gpt-5.4
+  soul: true
+
+# gpt-5.4-pro omitted: 38s+ per response (thinking model, unbounded reasoning tokens).
+# Use gpt-5.4 instead, which routes through a non-thinking endpoint.
+# - codename: gpt5pro-control
+#   provider: openrouter
+#   model: openai/gpt-5.4-pro
+#   soul: false
+#
+# - codename: gpt5pro-soul
+#   provider: openrouter
+#   model: openai/gpt-5.4-pro
+#   soul: true
+
+# ── Google via OpenRouter ─────────────────────────────────────────────────────
+
+- codename: gemini-control
+  provider: openrouter
+  model: google/gemini-2.5-pro
+  soul: false
+
+- codename: gemini-soul
+  provider: openrouter
+  model: google/gemini-2.5-pro
+  soul: true
+
+# ── Moonshot / Kimi ───────────────────────────────────────────────────────────
+
+- codename: kimi-control
+  provider: openrouter
+  model: moonshotai/kimi-k2.5
+  soul: false
+  extra_params:
+    reasoning:
+      effort: none
+
+- codename: kimi-soul
+  provider: openrouter
+  model: moonshotai/kimi-k2.5
+  soul: true
+  extra_params:
+    reasoning:
+      effort: none
+
+# ── Z.ai / GLM ───────────────────────────────────────────────────────────────
+
+- codename: glm51-control
+  provider: openrouter
+  model: z-ai/glm-5.1
+  soul: false
+
+- codename: glm51-soul
+  provider: openrouter
+  model: z-ai/glm-5.1
+  soul: true
+
+- codename: glm47-control
+  provider: openrouter
+  model: z-ai/glm-4.7
+  soul: false
+
+- codename: glm47-soul
+  provider: openrouter
+  model: z-ai/glm-4.7
+  soul: true
+
+# ── Qwen ─────────────────────────────────────────────────────────────────────
+
+- codename: qwen36-control
+  provider: openrouter
+  model: qwen/qwen3.6-plus
+  soul: false
+
+- codename: qwen36-soul
+  provider: openrouter
+  model: qwen/qwen3.6-plus
+  soul: true
+
+# ── MiniMax ───────────────────────────────────────────────────────────────────
+
+- codename: m2m7-control
+  provider: openrouter
+  model: minimax/minimax-m2.7
+  soul: false
+
+- codename: m2m7-soul
+  provider: openrouter
+  model: minimax/minimax-m2.7
+  soul: true
+
+- codename: m2m5-control
+  provider: openrouter
+  model: minimax/minimax-m2.5
+  soul: false
+
+- codename: m2m5-soul
+  provider: openrouter
+  model: minimax/minimax-m2.5
+  soul: true
+
+# ── Xiaomi / MiMo ────────────────────────────────────────────────────────────
+
+- codename: mimo-control
+  provider: openrouter
+  model: xiaomi/mimo-v2-pro
+  soul: false
+
+- codename: mimo-soul
+  provider: openrouter
+  model: xiaomi/mimo-v2-pro
+  soul: true
+
+

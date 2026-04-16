@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+out/
+data/
+harness/logs/
+results/
+harness/models.local.yaml
